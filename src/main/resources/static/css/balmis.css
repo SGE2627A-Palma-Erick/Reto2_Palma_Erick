@@ -1,0 +1,114 @@
+/* static/css/balmis.css: tema marítimo inspirado en Odoo */
+:root {
+    --balmis-navy: #0B2545;
+    --balmis-ocean: #13315C;
+    --balmis-teal: #1B998B;
+    --balmis-teal-dark: #158077;
+    --balmis-sand: #F4EBD9;
+    --balmis-foam: #F5F9FC;
+    --balmis-line: #D9E2EC;
+}
+
+#logo_IES {
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+#logo_GVA {
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.jumbotron {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  color: #0B2545;
+}
+
+body.balmis-body {
+    background-color: var(--balmis-foam);
+    color: #1F2D3D;
+}
+
+/* Barra superior oscura con degradado */
+.balmis-navbar {
+    background: linear-gradient(90deg, var(--balmis-navy), var(--balmis-ocean));
+}
+.balmis-navbar .navbar-brand,
+.balmis-navbar .navbar-nav .nav-link {
+    color: #FFFFFF;
+}
+.balmis-navbar .navbar-nav .nav-link:hover,
+.balmis-navbar .navbar-nav .nav-link.active {
+    color: var(--balmis-sand);
+}
+.balmis-avatar {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--balmis-teal);
+    color: #FFFFFF;
+}
+
+/* Botón principal en turquesa */
+.btn-primary {
+    --bs-btn-bg: var(--balmis-teal);
+    --bs-btn-border-color: var(--balmis-teal);
+    --bs-btn-hover-bg: var(--balmis-teal-dark);
+    --bs-btn-hover-border-color: var(--balmis-teal-dark);
+    --bs-btn-active-bg: var(--balmis-teal-dark);
+    --bs-btn-active-border-color: var(--balmis-teal-dark);
+}
+
+/* Panel de control: migas y título */
+.balmis-breadcrumb .breadcrumb-item a {
+    color: var(--balmis-ocean);
+    text-decoration: none;
+}
+.balmis-title {
+    color: var(--balmis-navy);
+    font-weight: 600;
+}
+
+/* Vista lista: cabecera arena y fila resaltada */
+.balmis-table {
+    --bs-table-hover-bg: #E3F4F1;
+}
+.balmis-table thead th {
+    background-color: var(--balmis-sand);
+    color: var(--balmis-navy);
+    border-bottom: 2px solid var(--balmis-navy);
+}
+
+/* Tarjetas del panel de control */
+.balmis-card {
+    border: 1px solid var(--balmis-line);
+    border-radius: .5rem;
+    box-shadow: 0 1px 3px rgba(11, 37, 69, .08);
+    font-size: 2rem;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.balmis-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(11, 37, 69, .15);
+}
+.balmis-card .bi {
+    font-size: 3.5rem;
+    color: var(--balmis-teal);
+}
+.balmis-card-total {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--balmis-navy);
+}
+
+/* Pie de página */
+.balmis-footer {
+    background-color: var(--balmis-navy);
+    color: #CFE3F1;
+}
