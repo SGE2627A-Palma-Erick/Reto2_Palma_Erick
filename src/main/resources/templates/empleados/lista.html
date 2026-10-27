@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main-content})}">
+<head>
+    <title>Empleados — ERP Balmis</title>
+</head>
+<body>
+<th:block th:fragment="main-content">
+    <!-- Aquí va el contenido específico de la lista de empleados -->
+     <nav aria-label="breadcrumb" class="balmis-breadcrumb">
+        <ol class="breadcrumb mb-1">
+            <li class="breadcrumb-item"><a th:href="@{/}">Panel</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Empleados</li>
+        </ol>
+    </nav>
+    <!-- Ubicación de la página añadida -->
+     <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <h2 class="balmis-title h4 mb-0">Empleados</h2>
+        <div class="d-flex gap-2">
+            <input class="form-control form-control-sm" type="search" placeholder="Buscar empleado…" />
+            <button class="btn btn-primary btn-sm"><i class="bi bi-plus-lg"></i> Nuevo</button>
+        </div>
+    </div>
+    <div class="table-responsive bg-white rounded-3 shadow-sm">
+        <table class="table table-hover balmis-table mb-0">
+            <thead>
+                <tr>
+                    <th>Nº Empleado</th>
+                    <th>Nombre completo</th>
+                    <th>Cargo</th>
+                    <th>Departamento</th>
+                    <th>Email</th>
+                    <th>Incorporación</th>
+                    <th>Activo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí van las filas de cada empleado -->
+                 <tr th:each="empleado : ${empleados}">
+                    <td th:text="${empleado.numeroEmpleado}"></td>
+                    <td th:text="${empleado.nombre + ' ' + empleado.apellidos}"></td>
+                    <td th:text="${empleado.cargo}"></td>
+                    <td th:text="${empleado.departamento}"></td>
+                    <td th:text="${empleado.email}"></td>
+                    <td th:text="${#temporals.format(empleado.fechaIncorporacion, 'dd/MM/yyyy')}"></td>
+                    <td>
+                        <span class="badge"
+                            th:classappend="${empleado.activo} ? 'bg-success' : 'bg-secondary'"
+                            th:text="${empleado.activo} ? 'Sí' : 'No'"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</th:block>
+</body>
+</html>

@@ -19,6 +19,12 @@
 	margin-bottom: 10px;
 }
 
+#portada {
+    margin-top: 20px;
+    height: 400px;
+    object-fit: cover;
+}
+
 .jumbotron {
   font-size: 60px;
   font-weight: bold;
